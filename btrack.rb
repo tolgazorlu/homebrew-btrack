@@ -12,18 +12,10 @@ class Btrack < Formula
     if Hardware::CPU.intel?
       url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.4/btrack-darwin-amd64.tar.gz"
       sha256 "7779fef6ae0626e1b8b564eef8471f45462a9339fc3bb72075c2070d622eecae"
-
-      define_method(:install) do
-        bin.install "btrack"
-      end
     end
     if Hardware::CPU.arm?
       url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.4/btrack-darwin-arm64.tar.gz"
       sha256 "a53c0d32e3691bf7ff6a5beb3e6bd9fc0d11ac1111c489914e3823a0b7d12eca"
-
-      define_method(:install) do
-        bin.install "btrack"
-      end
     end
   end
 
@@ -31,17 +23,15 @@ class Btrack < Formula
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.4/btrack-linux-amd64.tar.gz"
       sha256 "3311e9fc1e41b388cc00c79bb02afe8a15e6ba2b4c9af5e470edc47ab4e83070"
-      define_method(:install) do
-        bin.install "btrack"
-      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.4/btrack-linux-arm64.tar.gz"
       sha256 "3be23756dfb8565103986faf9be5d8579aa0ce319895932eef042c1d093779b1"
-      define_method(:install) do
-        bin.install "btrack"
-      end
     end
+  end
+
+  def install
+    bin.install "btrack"
   end
 
   test do
