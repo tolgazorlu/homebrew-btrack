@@ -5,33 +5,43 @@
 class Btrack < Formula
   desc "AI-native CLI time tracker with git-style workflow"
   homepage "https://github.com/tolgazorlu/btrack"
-  version "0.6.1"
+  version "0.6.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.1/btrack-darwin-amd64.tar.gz"
-      sha256 "0c038a739731c9f102550c3fd6b45d67b78fd91d5a40f6094ecaac5996b350b4"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.2/btrack-darwin-amd64.tar.gz"
+      sha256 "559089d173a6f3087892afe3c66d844c2c8acd8c36cd9e09482171e3522fd99e"
+
+      define_method(:install) do
+        bin.install "btrack"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.1/btrack-darwin-arm64.tar.gz"
-      sha256 "a2e359d7cb10aa27fcabead03d1de30710268fc30fbde3a074887333efd94a96"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.2/btrack-darwin-arm64.tar.gz"
+      sha256 "9a108fdb64a3b6c8436a6603d01196df219281c57c857306db68ff0c0a1c85fe"
+
+      define_method(:install) do
+        bin.install "btrack"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.1/btrack-linux-amd64.tar.gz"
-      sha256 "5efd20a6459aa8b2bd778a863b4845c462899f6a7d7af2e6f652fe43e0379c4b"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.2/btrack-linux-amd64.tar.gz"
+      sha256 "c827eececa768752c31ee2e28bb76cb59a8b384e957346dd9112b7dacebc9d2a"
+      define_method(:install) do
+        bin.install "btrack"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.1/btrack-linux-arm64.tar.gz"
-      sha256 "6009f2bfd132f3c3ecc3a0b416630d854a1f554f79f332142e3bfe9ff8cb0186"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.2/btrack-linux-arm64.tar.gz"
+      sha256 "84cc2f2bf9f5e9484e74aca44be38de9d31de295035dbf3ef7c35966c3abdc03"
+      define_method(:install) do
+        bin.install "btrack"
+      end
     end
-  end
-
-  def install
-    bin.install "btrack"
   end
 
   test do
