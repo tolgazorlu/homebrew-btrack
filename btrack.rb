@@ -5,28 +5,28 @@
 class Btrack < Formula
   desc "AI-native CLI time tracker with git-style workflow"
   homepage "https://github.com/tolgazorlu/btrack"
-  version "0.6.7"
+  version "0.8.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.7/btrack-darwin-amd64.tar.gz"
-      sha256 "1e23f3dbdb3ebeda79c396d0eb679d793a6e965512ff9d60f151e95856ff2abf"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.8.0/btrack-darwin-amd64.tar.gz"
+      sha256 "b2b90bab048ddb6098f747736c9ab5827116e1e5718d9b37e3008a439fb88af8"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.7/btrack-darwin-arm64.tar.gz"
-      sha256 "e35e20776fc088724b134fe1ccde3bb7e56a3d2b43babfde8e9e1182ada1600c"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.8.0/btrack-darwin-arm64.tar.gz"
+      sha256 "54f009caedb1bda70b244a6421c4775a3e4b900e9aeb3b7966d3484935d31252"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.7/btrack-linux-amd64.tar.gz"
-      sha256 "62f7e4267ec33b791ab7b844b36397a474a9377f3df515a7ca855b3151e6a683"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.8.0/btrack-linux-amd64.tar.gz"
+      sha256 "53c115df409cf407b30c333157e7181370f2c204b49df27498316512a4131a52"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tolgazorlu/btrack/releases/download/v0.6.7/btrack-linux-arm64.tar.gz"
-      sha256 "986870a67f3f9d7e8a433ff77a1fa11629a6d67f7f1ebc62a88f931cf030da2a"
+      url "https://github.com/tolgazorlu/btrack/releases/download/v0.8.0/btrack-linux-arm64.tar.gz"
+      sha256 "c536b534b00b5b52111cfdef5f39c3bdd04d3413a89c748564a89f68256f86d5"
     end
   end
 
